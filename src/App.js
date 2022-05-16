@@ -31,6 +31,7 @@ import LongPressComponent from "./30-useLongPress.js/LongPressComponent";
 import HookCounter from "./31-useState/HookCounter";
 import HookCounterTwo from "./31-useState/HookCounterTwo";
 import HookCounterObject from "./31-useState/HookCounterObject";
+import HookCounterArray from "./31-useState/HookCounterArray";
 
 function App() {
   // return <ToggleComponent />
@@ -65,7 +66,8 @@ function App() {
   // return <LongPressComponent />
   // return <HookCounter />;
   // return <HookCounterTwo />;
-  return <HookCounterObject />;
+  // return <HookCounterObject />;
+  return <HookCounterArray />;
 }
 
 export default App;
