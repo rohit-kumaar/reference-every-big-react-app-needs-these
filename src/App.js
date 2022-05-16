@@ -32,6 +32,7 @@ import HookCounter from "./31-useState/HookCounter";
 import HookCounterTwo from "./31-useState/HookCounterTwo";
 import HookCounterObject from "./31-useState/HookCounterObject";
 import HookCounterArray from "./31-useState/HookCounterArray";
+import HookCounterOne from "./32-useEffect/HookCounterOne";
 
 function App() {
   // return <ToggleComponent />
@@ -67,7 +68,8 @@ function App() {
   // return <HookCounter />;
   // return <HookCounterTwo />;
   // return <HookCounterObject />;
-  return <HookCounterArray />;
+  // return <HookCounterArray />;
+  return <HookCounterOne />;
 }
 
 export default App;
