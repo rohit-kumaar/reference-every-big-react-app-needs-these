@@ -38,6 +38,7 @@ import MouseContainer from "./32-useEffect/MouseContainer";
 import IntervalHookCounter from "./32-useEffect/IntervalHookCounter";
 import DataFetching from "./32-useEffect/DataFetching";
 import DataFetching2 from "./32-useEffect/DataFetching2";
+import DataFetching3 from "./32-useEffect/DataFetching3";
 
 function App() {
   // return <ToggleComponent />
@@ -79,7 +80,8 @@ function App() {
   // return <MouseContainer />;
   // return <IntervalHookCounter />;
   // return <DataFetching />;
-  return <DataFetching2 />;
+  // return <DataFetching2 />;
+  return <DataFetching3 />;
 }
 
 export default App;
