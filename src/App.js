@@ -33,6 +33,7 @@ import HookCounterTwo from "./31-useState/HookCounterTwo";
 import HookCounterObject from "./31-useState/HookCounterObject";
 import HookCounterArray from "./31-useState/HookCounterArray";
 import HookCounterOne from "./32-useEffect/HookCounterOne";
+import HookMouse from "./32-useEffect/HookMouse";
 
 function App() {
   // return <ToggleComponent />
@@ -69,7 +70,8 @@ function App() {
   // return <HookCounterTwo />;
   // return <HookCounterObject />;
   // return <HookCounterArray />;
-  return <HookCounterOne />;
+  // return <HookCounterOne />;
+  return <HookMouse />;
 }
 
 export default App;
