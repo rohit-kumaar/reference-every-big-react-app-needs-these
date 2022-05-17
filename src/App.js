@@ -39,6 +39,7 @@ import IntervalHookCounter from "./32-useEffect/IntervalHookCounter";
 import DataFetching from "./32-useEffect/DataFetching";
 import DataFetching2 from "./32-useEffect/DataFetching2";
 import DataFetching3 from "./32-useEffect/DataFetching3";
+import PostData from "./32-useEffect/PostData";
 
 function App() {
   // return <ToggleComponent />
@@ -81,7 +82,8 @@ function App() {
   // return <IntervalHookCounter />;
   // return <DataFetching />;
   // return <DataFetching2 />;
-  return <DataFetching3 />;
+  // return <DataFetching3 />;
+  return <PostData />;
 }
 
 export default App;
