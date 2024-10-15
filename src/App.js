@@ -1,229 +1,408 @@
-import * as React from "react";
+import React, { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ToggleComponent from "./01-useToggle/ToggleComponent";
-import TimeoutComponent from "./02-useTimeout/TimeoutComponent";
-import DebounceComponent from "./03-useDebounce/DebounceComponent";
-import UpdateEffectComponent from "./04-useUpdateEffect/UpdateEffectComponent";
-import ArrayComponent from "./05-useArray/ArrayComponent";
-import PreviousComponent from "./06-usePrevious/PreviousComponent";
-import StateWithHistoryComponent from "./07-useStateWithHistory/StateWithHistoryComponent";
-import StorageComponent from "./08-useStorage/StorageComponent";
-import AsyncComponent from "./09-useAsync/AsyncComponent";
-import FetchComponent from "./10-useFetch/FetchComponent";
-import ScriptComponent from "./11-useScript/ScriptComponent";
-import DeepCompareEffectComponent from "./12-useDeepCompareEffect/DeepCompareEffectComponent";
-import EventListenerComponent from "./13-useEventListener/EventListenerComponent";
-import OnScreenComponentComponent from "./14-useOnScreen/OnScreenComponent";
-import WindowSizeComponent from "./15-useWindowSize/WindowSizeComponent";
-import MediaQueryComponent from "./16-useMediaQuery/MediaQueryComponent";
-import GeolocationComponent from "./17-useGeolocation/GeolocationComponent";
-import StateWithValidationComponent from "./18-useStateWithValidation/StateWithValidationComponent";
-import SizeComponent from "./19-useSize/SizeComponent";
-import EffectOnceComponent from "./20-useEffectOnce/EffectOnceComponent";
-import ClickOutsideComponent from "./21-useClickOutside/ClickOutsideComponent";
-import DarkModeComponent from "./22-useDarkMode/DarkModeComponent";
-import CopyToClipboardComponent from "./23-useCopyToClipboard/CopyToClipboardComponent";
-import CookieComponent from "./24-useCookie/CookieComponent";
-import TranslationComponent from "./25-useTranslation/TranslationComponent";
-import OnlineStatusComponent from "./26-useOnlineStatus/OnlineStatusComponent";
-import RenderCountComponent from "./27-useRenderCount/RenderCountComponent";
-import DebugInformationComponent from "./28-useDebugInformation/DebugInformationComponent";
-import HoverComponent from "./29-useHover/HoverComponent";
-import LongPressComponent from "./30-useLongPress.js/LongPressComponent";
-import AllInputsWithAsingleonChange from "./31-useState/AllInputsWithAsingleonChange";
-import HookCounter from "./31-useState/HookCounter";
-import HookCounterArray from "./31-useState/HookCounterArray";
-import HookCounterObject from "./31-useState/HookCounterObject";
-import HookCounterTwo from "./31-useState/HookCounterTwo";
-import DataFetching from "./32-useEffect/DataFetching";
-import DataFetching2 from "./32-useEffect/DataFetching2";
-import DataFetching3 from "./32-useEffect/DataFetching3";
-import HookCounterOne from "./32-useEffect/HookCounterOne";
-import HookMouse from "./32-useEffect/HookMouse";
-import IntervalHookCounter from "./32-useEffect/IntervalHookCounter";
-import MouseContainer from "./32-useEffect/MouseContainer";
-import PostData from "./32-useEffect/PostData";
-import Home from "./Home";
 import "./app.css";
+
+const ToggleComponent = lazy(() => import("./01-useToggle/ToggleComponent"));
+const TimeoutComponent = lazy(() => import("./02-useTimeout/TimeoutComponent"));
+const DebounceComponent = lazy(() => import("./03-useDebounce/DebounceComponent"));
+const UpdateEffectComponent = lazy(() => import("./04-useUpdateEffect/UpdateEffectComponent"));
+const ArrayComponent = lazy(() => import("./05-useArray/ArrayComponent"));
+const PreviousComponent = lazy(() => import("./06-usePrevious/PreviousComponent"));
+const StateWithHistoryComponent = lazy(() => import("./07-useStateWithHistory/StateWithHistoryComponent"));
+const StorageComponent = lazy(() => import("./08-useStorage/StorageComponent"));
+const AsyncComponent = lazy(() => import("./09-useAsync/AsyncComponent"));
+const FetchComponent = lazy(() => import("./10-useFetch/FetchComponent"));
+const ScriptComponent = lazy(() => import("./11-useScript/ScriptComponent"));
+const DeepCompareEffectComponent = lazy(() => import("./12-useDeepCompareEffect/DeepCompareEffectComponent"));
+const EventListenerComponent = lazy(() => import("./13-useEventListener/EventListenerComponent"));
+const OnScreenComponentComponent = lazy(() => import("./14-useOnScreen/OnScreenComponent"));
+const WindowSizeComponent = lazy(() => import("./15-useWindowSize/WindowSizeComponent"));
+const MediaQueryComponent = lazy(() => import("./16-useMediaQuery/MediaQueryComponent"));
+const GeolocationComponent = lazy(() => import("./17-useGeolocation/GeolocationComponent"));
+const StateWithValidationComponent = lazy(() => import("./18-useStateWithValidation/StateWithValidationComponent"));
+const SizeComponent = lazy(() => import("./19-useSize/SizeComponent"));
+const EffectOnceComponent = lazy(() => import("./20-useEffectOnce/EffectOnceComponent"));
+const ClickOutsideComponent = lazy(() => import("./21-useClickOutside/ClickOutsideComponent"));
+const DarkModeComponent = lazy(() => import("./22-useDarkMode/DarkModeComponent"));
+const CopyToClipboardComponent = lazy(() => import("./23-useCopyToClipboard/CopyToClipboardComponent"));
+const CookieComponent = lazy(() => import("./24-useCookie/CookieComponent"));
+const TranslationComponent = lazy(() => import("./25-useTranslation/TranslationComponent"));
+const OnlineStatusComponent = lazy(() => import("./26-useOnlineStatus/OnlineStatusComponent"));
+const RenderCountComponent = lazy(() => import("./27-useRenderCount/RenderCountComponent"));
+const DebugInformationComponent = lazy(() => import("./28-useDebugInformation/DebugInformationComponent"));
+const HoverComponent = lazy(() => import("./29-useHover/HoverComponent"));
+const LongPressComponent = lazy(() => import("./30-useLongPress.js/LongPressComponent"));
+const AllInputsWithAsingleonChange = lazy(() => import("./31-useState/AllInputsWithAsingleonChange"));
+const HookCounter = lazy(() => import("./31-useState/HookCounter"));
+const HookCounterArray = lazy(() => import("./31-useState/HookCounterArray"));
+const HookCounterObject = lazy(() => import("./31-useState/HookCounterObject"));
+const HookCounterTwo = lazy(() => import("./31-useState/HookCounterTwo"));
+const DataFetching = lazy(() => import("./32-useEffect/DataFetching"));
+const DataFetching2 = lazy(() => import("./32-useEffect/DataFetching2"));
+const DataFetching3 = lazy(() => import("./32-useEffect/DataFetching3"));
+const HookCounterOne = lazy(() => import("./32-useEffect/HookCounterOne"));
+const HookMouse = lazy(() => import("./32-useEffect/HookMouse"));
+const IntervalHookCounter = lazy(() => import("./32-useEffect/IntervalHookCounter"));
+const MouseContainer = lazy(() => import("./32-useEffect/MouseContainer"));
+const PostData = lazy(() => import("./32-useEffect/PostData"));
+const Home = lazy(() => import("./Home"));
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <Suspense fallback="Loading...">
+        <Home />
+      </Suspense>
+    ),
   },
   {
     path: "/toggle",
-    element: <ToggleComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <ToggleComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/timeout",
-    element: <TimeoutComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <TimeoutComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/debounce",
-    element: <DebounceComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <DebounceComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/update-effect",
-    element: <UpdateEffectComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <UpdateEffectComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/array",
-    element: <ArrayComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <ArrayComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/previous",
-    element: <PreviousComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <PreviousComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/state-with-history",
-    element: <StateWithHistoryComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <StateWithHistoryComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/storage",
-    element: <StorageComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <StorageComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/async",
-    element: <AsyncComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <AsyncComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/fetch",
-    element: <FetchComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <FetchComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/script",
-    element: <ScriptComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <ScriptComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/deep-compare-effect",
-    element: <DeepCompareEffectComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <DeepCompareEffectComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/event-listener",
-    element: <EventListenerComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <EventListenerComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/on-screen-component",
-    element: <OnScreenComponentComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <OnScreenComponentComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/window-size",
-    element: <WindowSizeComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <WindowSizeComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/media-query",
-    element: <MediaQueryComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <MediaQueryComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/geolocation",
-    element: <GeolocationComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <GeolocationComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/stateWith-validation",
-    element: <StateWithValidationComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <StateWithValidationComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/size",
-    element: <SizeComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <SizeComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/effect-once",
-    element: <EffectOnceComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <EffectOnceComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/click-outside",
-    element: <ClickOutsideComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <ClickOutsideComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/dark-mode",
-    element: <DarkModeComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <DarkModeComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/copy-to-clipboard",
-    element: <CopyToClipboardComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <CopyToClipboardComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/cookie",
-    element: <CookieComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <CookieComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/translation",
-    element: <TranslationComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <TranslationComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/online-status",
-    element: <OnlineStatusComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <OnlineStatusComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/render-count",
-    element: <RenderCountComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <RenderCountComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/debug-information",
-    element: <DebugInformationComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <DebugInformationComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/hover",
-    element: <HoverComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <HoverComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/long-press",
-    element: <LongPressComponent />,
+    element: (
+      <Suspense fallback="Loading...">
+        <LongPressComponent />
+      </Suspense>
+    ),
   },
   {
     path: "/hook",
-    element: <HookCounter />,
+    element: (
+      <Suspense fallback="Loading...">
+        <HookCounter />
+      </Suspense>
+    ),
   },
   {
     path: "/hook-counter",
-    element: <HookCounterArray />,
+    element: (
+      <Suspense fallback="Loading...">
+        <HookCounterArray />
+      </Suspense>
+    ),
   },
   {
     path: "/hook-counter-two",
-    element: <HookCounterTwo />,
+    element: (
+      <Suspense fallback="Loading...">
+        <HookCounterTwo />
+      </Suspense>
+    ),
   },
   {
     path: "/hook-counter-object",
-    element: <HookCounterObject />,
+    element: (
+      <Suspense fallback="Loading...">
+        <HookCounterObject />
+      </Suspense>
+    ),
   },
   {
     path: "/all-input-with-a-single-on-change",
-    element: <AllInputsWithAsingleonChange />,
+    element: (
+      <Suspense fallback="Loading...">
+        <AllInputsWithAsingleonChange />
+      </Suspense>
+    ),
   },
   {
     path: "/hook-counter-one",
-    element: <HookCounterOne />,
+    element: (
+      <Suspense fallback="Loading...">
+        <HookCounterOne />
+      </Suspense>
+    ),
   },
   {
     path: "/hook-mouse",
-    element: <HookMouse />,
+    element: (
+      <Suspense fallback="Loading...">
+        <HookMouse />
+      </Suspense>
+    ),
   },
   {
     path: "/mouse-container",
-    element: <MouseContainer />,
+    element: (
+      <Suspense fallback="Loading...">
+        <MouseContainer />
+      </Suspense>
+    ),
   },
   {
     path: "/interval-hook-counter",
-    element: <IntervalHookCounter />,
+    element: (
+      <Suspense fallback="Loading...">
+        <IntervalHookCounter />
+      </Suspense>
+    ),
   },
   {
     path: "/data-fetching",
-    element: <DataFetching />,
+    element: (
+      <Suspense fallback="Loading...">
+        <DataFetching />
+      </Suspense>
+    ),
   },
   {
     path: "/data-fetching-2",
-    element: <DataFetching2 />,
+    element: (
+      <Suspense fallback="Loading...">
+        <DataFetching2 />
+      </Suspense>
+    ),
   },
   {
     path: "/data-fetching-3",
-    element: <DataFetching3 />,
+    element: (
+      <Suspense fallback="Loading...">
+        <DataFetching3 />
+      </Suspense>
+    ),
   },
   {
     path: "/post-data",
-    element: <PostData />,
+    element: (
+      <Suspense fallback="Loading...">
+        <PostData />
+      </Suspense>
+    ),
   },
 ]);
+
 
 function App() {
   return <RouterProvider router={router} />;
