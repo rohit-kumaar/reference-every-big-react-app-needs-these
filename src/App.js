@@ -1,5 +1,5 @@
-// import ToggleComponent from "./1-useToggle/ToggleComponent";
-// import TimeoutComponent from "./2-useTimeout/TimeoutComponent";
+import ToggleComponent from "./01-useToggle/ToggleComponent";
+// import TimeoutComponent from "./02-useTimeout/TimeoutComponent";
 // import DebounceComponent from "./3-useDebounce/DebounceComponent";
 // import UpdateEffectComponent from "./4-useUpdateEffect/UpdateEffectComponent";
 // import ArrayComponent from "./5-useArray/ArrayComponent";
@@ -31,7 +31,7 @@
 // import HookCounter from "./31-useState/HookCounter";
 // import HookCounterArray from "./31-useState/HookCounterArray";
 // import HookCounterTwo from "./31-useState/HookCounterTwo";
-import AllInputsWithAsingleonChange from "./31-useState/AllInputsWithAsingleonChange";
+// import AllInputsWithAsingleonChange from "./31-useState/AllInputsWithAsingleonChange";
 // import HookCounterObject from "./31-useState/HookCounterObject";
 // import HookCounterOne from "./32-useEffect/HookCounterOne";
 // import HookMouse from "./32-useEffect/HookMouse";
@@ -43,8 +43,8 @@ import AllInputsWithAsingleonChange from "./31-useState/AllInputsWithAsingleonCh
 // import PostData from "./32-useEffect/PostData";
 
 function App() {
-  // return <ToggleComponent />
-  // return <TimeoutComponent />
+  return <ToggleComponent />;
+  // return <TimeoutComponent />;
   // return <DebounceComponent />
   // return <UpdateEffectComponent />
   // return <ArrayComponent />
@@ -77,7 +77,7 @@ function App() {
   // return <HookCounterArray />;
   // return <HookCounterTwo />;
   // return <HookCounterObject />;
-  return <AllInputsWithAsingleonChange />;
+  // return <AllInputsWithAsingleonChange />;
   // return <HookCounterOne />;
   // return <HookMouse />;
   // return <MouseContainer />;
